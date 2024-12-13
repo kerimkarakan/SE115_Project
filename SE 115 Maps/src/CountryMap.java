@@ -68,6 +68,4 @@ public class CountryMap {
     public Route[] getRoutes(){
         return routes;
     }
-
-
 }
