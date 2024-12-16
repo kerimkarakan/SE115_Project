@@ -4,9 +4,9 @@ public class CountryMap {
     private int cityArrayCounter;
     private int routeArrayCounter;
 
-    public CountryMap(int cityNumber, int routeNumber){
-        cities = new City[cityNumber];
-        routes = new Route[routeNumber];
+    public CountryMap(int numberOfCities, int numberOfRoutes){
+        cities = new City[numberOfCities];
+        routes = new Route[numberOfRoutes];
         cityArrayCounter = 0;
         routeArrayCounter = 0;
     }
