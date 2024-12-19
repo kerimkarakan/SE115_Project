@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SE 115 Maps/SE 115 Maps.iml" filepath="$PROJECT_DIR$/SE 115 Maps/SE 115 Maps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SE115_Maps/SE 115 Maps.iml" filepath="$PROJECT_DIR$/SE115_Maps/SE 115 Maps.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SE115_Project.iml" filepath="$PROJECT_DIR$/.idea/SE115_Project.iml" />
     </modules>
   </component>

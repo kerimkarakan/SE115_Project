@@ -11,6 +11,18 @@ public class CountryMap {
         routeArrayCounter = 0;
     }
 
+    public void resizeCityArray(){
+        City[] newCities = new City[cities.length * 2];
+        System.arraycopy(cities, 0, newCities, 0, cities.length);
+        cities = newCities;
+    }
+
+    public void resizeRouteArray(){
+        Route[] newRoutes = new Route[routes.length * 2];
+        System.arraycopy(routes, 0, newRoutes, 0, routes.length);
+        routes = newRoutes;
+    }
+
     public boolean cityExists(String cityName){
         for(int i = 0; i < cityArrayCounter; i++){
             if(cities[i].getName().equals(cityName)){
@@ -20,17 +32,15 @@ public class CountryMap {
         return false;
     }
     public void addCity(String name){
-        if(cityArrayCounter < cities.length){
-            if(cityExists(name)){
-                System.out.println("A city with this name already exists. Please try another city name.");
-            }
-            else {
-                cities[cityArrayCounter++] = new City(name);
-            }
+        if(cityArrayCounter >= cities.length){
+            resizeCityArray();
         }
-        else{
-            System.out.println("You cannot add more cities. The maximum limit has been reached.");
+        if(cityExists(name)){
+            System.out.println("A city with this name already exists. Please try another city name.");
+            return;
         }
+
+        cities[cityArrayCounter++] = new City(name);
     }
 
     public City noCity(){
@@ -46,19 +56,18 @@ public class CountryMap {
     }
 
     public void addRoute(String city1Name, String city2Name, int time){
+        if(routeArrayCounter >= routes.length){
+            resizeRouteArray();
+        }
         City city1 = getCity(city1Name);
         City city2 = getCity(city2Name);
-        if(!(noCity().getName().equals(city1.getName())) && !(noCity().getName().equals(city2.getName()))){
-            if(routeArrayCounter < routes.length){
-                routes[routeArrayCounter++] = new Route(city1, city2, time);
-            }
-            else{
-                System.out.println("You cannot add more routes. The maximum limit has been reached");
-            }
+        if(noCity().getName().equals(city1.getName()) || noCity().getName().equals(city2.getName())){
+            System.out.println("One or both of the cities is not found. The route is not added.");
+            return;
         }
-        else{
-            System.out.println("One or both of the cities not found. The route cannot be added.");
-        }
+
+        routes[routeArrayCounter++] = new Route(city1, city2, time);
+
     }
 
     public City[] getCities(){
@@ -67,5 +76,13 @@ public class CountryMap {
 
     public Route[] getRoutes(){
         return routes;
+    }
+
+    public int getCityArrayCounter(){
+        return cityArrayCounter;
+    }
+
+    public int getRouteArrayCounter(){
+        return routeArrayCounter;
     }
 }
