@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SE115_Project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SE115_Project_jar</output-path>
+    <root id="archive" name="SE115_Project.jar">
+      <element id="module-output" name="SE115_Project" />
+      <element id="module-output" name="SE 115 Maps" />
+    </root>
+  </artifact>
+</component>

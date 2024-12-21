@@ -53,10 +53,10 @@ public class WayFinder {
             System.err.println("File is not read successfully.");
         }
         catch(NumberFormatException e){
-            System.err.println("The line "+ fileLineNum + " is empty or " + "the given number cannot be formatted at that line");
+            System.err.println("Error Line "+ fileLineNum +": "+ "The line is empty or the given number cannot be formatted at the line.");
         }
         catch(ArrayIndexOutOfBoundsException e){
-            System.err.println("Data is missing at the line "+fileLineNum);
+            System.err.println("Error Line "+ fileLineNum +": "+ "Data is missing at the line.");
         }
         catch(NoSuchElementException e){
             System.err.println("There is no data for start and end cities.");
